@@ -27,32 +27,32 @@ export default {
     >
       <h3>{{ name.toLowerCase() }}</h3>
       <Combination
-        v-bind:first="palette.light"
-        v-bind:second="palette.default"
-        v-bind:third="palette.dark"
+        v-bind:first="palette['200'].value"
+        v-bind:second="palette['500'].value"
+        v-bind:third="palette['800'].value"
       />
       <h4>Light</h4>
       <Box
-        v-bind:background="palette.light"
-        v-bind:border="palette.default"
-        v-bind:color="palette.dark"
+        v-bind:background="palette['200'].value"
+        v-bind:border="palette['500'].value"
+        v-bind:color="palette['800'].value"
       >
         <Contrast
           v-bind:styled="false"
-          v-bind:value="palette.light"
-          v-bind:versus="palette.dark"
+          v-bind:value="palette['200'].value"
+          v-bind:versus="palette['800'].value"
         />
       </Box>
       <h4>Dark</h4>
       <Box
-        v-bind:background="palette.dark"
-        v-bind:border="palette.default"
-        v-bind:color="palette.light"
+        v-bind:background="palette['800'].value"
+        v-bind:border="palette['500'].value"
+        v-bind:color="palette['200'].value"
       >
         <Contrast
           v-bind:styled="false"
-          v-bind:value="palette.light"
-          v-bind:versus="palette.dark"
+          v-bind:value="palette['200'].value"
+          v-bind:versus="palette['800'].value"
         />
       </Box>
     </li>

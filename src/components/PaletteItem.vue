@@ -3,11 +3,9 @@ import Color from 'color'
 import Contrast from './Contrast.vue'
 import Sample from './Sample.vue'
 import Swatch from './Swatch.vue'
-import { BASE } from '../../constants/constants'
 
 export default {
   name: 'PaletteItem',
-  BASE,
   components: {
     Contrast,
     Sample,
@@ -64,22 +62,22 @@ export default {
     </td>
     <td>
       <Sample
-        v-bind:background="$options.BASE.dark"
+        background="black"
         v-bind:color="value"
       />
       <Contrast
         v-bind:value="value"
-        v-bind:versus="$options.BASE.dark"
+        versus="black"
       />
     </td>
     <td>
       <Sample
-        v-bind:background="$options.BASE.light"
+        background="white"
         v-bind:color="value"
       />
       <Contrast
         v-bind:value="value"
-        v-bind:versus="$options.BASE.light"
+        versus="white"
       />
     </td>
   </tr>

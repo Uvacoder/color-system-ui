@@ -1,6 +1,4 @@
 <script>
-import { BASE } from '../../constants/constants'
-
 export default {
   name: 'Swatch',
   props: {
@@ -33,7 +31,7 @@ export default {
       return `background-color:${this.color}; color:${this.textColor}`
     },
     textColor() {
-      return Number(this.scale) >= 500 ? BASE.light : BASE.dark;
+      return Number(this.scale) >= 500 ? 'white' : 'black';
     },
   },
 }
@@ -45,7 +43,6 @@ export default {
     v-bind:style="style"
   >
     <h4 v-if="name">{{ name }}</h4>
-    <p>{{ label }}</p>
-    <p><code>{{ color }}</code></p>
+    <p>{{ scale }}</p>
   </div>
 </template>

@@ -1,9 +1,6 @@
 <script>
 import Color from 'color'
-import {
-  SHADES,
-  RATIO,
-} from '../../constants/constants'
+import palettes from '../../palettes.json'
 
 export default {
   name: 'Contrast',
@@ -23,21 +20,21 @@ export default {
   },
   computed: {
     background() {
-      if (this.contrast >= RATIO.AAA) {
-        return SHADES.green.light;
-      } else if (this.contrast >= RATIO.AA) {
-        return SHADES.yellow.light;
+      if (this.contrast >= 7) {
+        return palettes.green['200'].value;
+      } else if (this.contrast >= 4.5) {
+        return palettes.yellow['200'].value;
       } else {
-        return SHADES.red.light;
+        return palettes.red['200'].value;
       }
     },
     color() {
-      if (this.contrast >= RATIO.AAA) {
-        return SHADES.green.dark;
-      } else if (this.contrast >= RATIO.AA) {
-        return SHADES.yellow.dark;
+      if (this.contrast >= 7) {
+        return palettes.green['800'].value;
+      } else if (this.contrast >= 4.5) {
+        return palettes.yellow['800'].value;
       } else {
-        return SHADES.red.dark;
+        return palettes.red['800'].value;
       }
     },
     contrast() {
